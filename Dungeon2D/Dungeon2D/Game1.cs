@@ -11,6 +11,7 @@ namespace Dungeon2D
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Player player;
 
         public Game1()
         {
@@ -40,7 +41,11 @@ namespace Dungeon2D
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            // Initialize the player
+            player = new Player(30, 30);
+
             // TODO: use this.Content to load your game content here
+            player.LoadContent(Content);
         }
 
         /// <summary>
@@ -64,6 +69,7 @@ namespace Dungeon2D
 
             // TODO: Add your update logic here
 
+            player.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -77,6 +83,7 @@ namespace Dungeon2D
 
             // TODO: Add your drawing code here
 
+            player.Draw(spriteBatch);
             base.Draw(gameTime);
         }
     }
