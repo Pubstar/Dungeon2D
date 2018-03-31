@@ -42,7 +42,7 @@ namespace Dungeon2D
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // Initialize the player
-            player = new Player(30, 30);
+            player = new Player(70, 70);
 
             // TODO: use this.Content to load your game content here
             player.LoadContent(Content);
@@ -82,8 +82,9 @@ namespace Dungeon2D
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin();
             player.Draw(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
