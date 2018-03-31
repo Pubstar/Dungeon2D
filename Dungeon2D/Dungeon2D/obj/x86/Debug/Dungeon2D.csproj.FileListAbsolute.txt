@@ -77,8 +77,4 @@ C:\Users\piete\Desktop\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Content
 C:\Users\piete\Desktop\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Sprites\player.xnb
 C:\Users\piete\Desktop\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Textures\grass.xnb
 C:\Users\piete\Desktop\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Textures\wall.xnb
-Y:\GitHub\Dungeon2D\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Content\Textures\grass.xnb
-Y:\GitHub\Dungeon2D\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Content\Textures\wall.xnb
-Y:\GitHub\Dungeon2D\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Content\Sprites\player.xnb
-Y:\GitHub\Dungeon2D\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Textures\grass.xnb
-Y:\GitHub\Dungeon2D\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Textures\wall.xnb
+C:\Users\piete\Desktop\Dungeon2D\Dungeon2D\bin\Windows\x86\Debug\Content\Sprites\Bat.xnb

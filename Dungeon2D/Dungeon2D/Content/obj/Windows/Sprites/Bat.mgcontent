@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/piete/Desktop/Dungeon2D/Dungeon2D/Content/Textures/grass.jpg</SourceFile>
-  <SourceTime>2018-03-31T03:58:09.7289324+02:00</SourceTime>
-  <DestFile>C:/Users/piete/Desktop/Dungeon2D/Dungeon2D/Content/bin/Windows/Textures/grass.xnb</DestFile>
-  <DestTime>2018-03-31T13:52:55.9743447+02:00</DestTime>
+  <SourceFile>C:/Users/piete/Desktop/Dungeon2D/Dungeon2D/Content/Sprites/Bat.png</SourceFile>
+  <SourceTime>2018-03-31T14:10:47.2200527+02:00</SourceTime>
+  <DestFile>C:/Users/piete/Desktop/Dungeon2D/Dungeon2D/Content/bin/Windows/Sprites/Bat.xnb</DestFile>
+  <DestTime>2018-03-31T14:11:21.665179+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

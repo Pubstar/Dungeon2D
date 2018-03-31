@@ -14,6 +14,7 @@ namespace Dungeon2D
         Player player;
         WorldHandler wrld;
         Camera camera;
+        AI ai;
 
         public Game1()
         {
@@ -50,9 +51,12 @@ namespace Dungeon2D
             wrld = new WorldHandler();
             wrld.LoadTiles(Content);
             camera = new Camera();
+            ai = new AI();
 
             // TODO: use this.Content to load your game content here
             player.LoadContent(Content);
+            ai.LoadContent(Content);
+
         }
 
         /// <summary>
@@ -104,6 +108,8 @@ namespace Dungeon2D
                         }
                 }
             }
+
+            ai.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -118,6 +124,7 @@ namespace Dungeon2D
             // * Matrix.CreateScale(screenScale)
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, null, null, null, null, viewMatrix);
             wrld.Draw(spriteBatch);
+            ai.Draw(spriteBatch);
             player.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);

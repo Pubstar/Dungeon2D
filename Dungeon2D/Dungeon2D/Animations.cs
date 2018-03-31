@@ -18,20 +18,19 @@ namespace Dungeon2D
         public Rectangle SpriteRectangle;
         private Rectangle DestionRectangle;
         private Texture2D Texture;
-        private Vector2 FrameSize;
+        private Vector2 FrameSize = new Vector2(32,32);
 
         private int tempX;
 
         private int FrameTime;
 
-        public Boolean idle = true;
+        public Boolean idle = false;
 
-        public Animations(Texture2D texture, Rectangle sourceRect, Rectangle spriteRect, Vector2 frameSize)
+        public Animations(Texture2D texture, Rectangle sourceRect, Rectangle spriteRect)
         {
             Texture = texture;
             SourceRect = sourceRect;
             SpriteRectangle = spriteRect;
-            FrameSize = frameSize;
 
             DestionRectangle = new Rectangle(0, 0, (int)FrameSize.X, (int)FrameSize.Y);
             tempX = SourceRect.X;
@@ -64,7 +63,11 @@ namespace Dungeon2D
             else
                 DestionRectangle.X = 32;
 
-            spriteBatch.Draw(Texture, SourceRect, DestionRectangle, Color.White);
+            if(Texture != null)
+            {
+                spriteBatch.Draw(Texture, SourceRect, DestionRectangle, Color.White);
+            }
+            
         }
     }
 }

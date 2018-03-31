@@ -76,7 +76,7 @@ namespace Dungeon2D
             PlayerText = content.Load<Texture2D>("Sprites/player");
 
             FrameSize = new Vector2(32, 32);
-            animations = new Animations(PlayerText, PlayerRect, new Rectangle((int)PlayerPos.X, (int)PlayerPos.Y, 96, 128), FrameSize);
+            animations = new Animations(PlayerText, PlayerRect, new Rectangle((int)PlayerPos.X, (int)PlayerPos.Y, 96, 128));
         }
 
         public void Draw(SpriteBatch spriteBatch)
