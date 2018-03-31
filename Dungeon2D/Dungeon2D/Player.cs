@@ -24,6 +24,7 @@ namespace Dungeon2D
         {
             PlayerPos.X = playerPosX;
             PlayerPos.Y = playerPosY;
+            PlayerRect = new Rectangle((int)PlayerPos.X, (int)PlayerPos.Y, 64, 64);
         }
 
         public void Update(GameTime gameTime)
@@ -31,6 +32,43 @@ namespace Dungeon2D
 
             PlayerRect = new Rectangle((int)PlayerPos.X, (int)PlayerPos.Y, PlayerText.Width, PlayerText.Height);
             PlayerPos = new Vector2(animations.SourceRect.X, animations.SourceRect.Y);
+
+            if (Keyboard.GetState().GetPressedKeys().Length > 0)
+            {
+                switch (Keyboard.GetState().GetPressedKeys()[0])
+                {
+                    case Keys.W:
+                        {
+                            animations.ChangeState(states.WalkingForward);
+                            animations.SourceRect.Y -= (int)Settings.PlayerMoveSpeed;
+                            break;
+                        }
+                    case Keys.A:
+                        {
+                            animations.ChangeState(states.WalkingLeft);
+                            animations.SourceRect.X -= (int)Settings.PlayerMoveSpeed;
+                            break;
+                        }
+                    case Keys.S:
+                        {
+                            animations.ChangeState(states.WalkingBackward);
+                            animations.SourceRect.Y += (int)Settings.PlayerMoveSpeed;
+                            break;
+                        }
+                    case Keys.D:
+                        {
+                            animations.ChangeState(states.WalkingRight);
+                            animations.SourceRect.X += (int)Settings.PlayerMoveSpeed;
+                            break;
+                        }
+                }
+                animations.idle = false;
+            }
+            else
+            {
+                animations.idle = true;
+            }
+
         }
 
         public void LoadContent(ContentManager content)
@@ -38,7 +76,7 @@ namespace Dungeon2D
             PlayerText = content.Load<Texture2D>("Sprites/player");
 
             FrameSize = new Vector2(32, 32);
-            animations = new Animations(PlayerText, new Rectangle((int)PlayerPos.X, (int)PlayerPos.Y, PlayerText.Width, PlayerText.Height), FrameSize);
+            animations = new Animations(PlayerText, PlayerRect, new Rectangle((int)PlayerPos.X, (int)PlayerPos.Y, 96, 128), FrameSize);
         }
 
         public void Draw(SpriteBatch spriteBatch)

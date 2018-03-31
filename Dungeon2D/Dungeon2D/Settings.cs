@@ -12,6 +12,7 @@ namespace Dungeon2D
         public static int Height = 720;
         public static int ChunkSize = 10;
         public static int TileSize = 64;
-        public static float PlayerMoveSpeed = 2;
+        public static float PlayerMoveSpeed = 5;
+        public static int FrameTime = 40;
     }
 }

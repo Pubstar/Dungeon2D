@@ -15,6 +15,7 @@ namespace Dungeon2D
     public class Animations
     {
         public Rectangle SourceRect;
+        public Rectangle SpriteRectangle;
         private Rectangle DestionRectangle;
         private Texture2D Texture;
         private Vector2 FrameSize;
@@ -25,10 +26,11 @@ namespace Dungeon2D
 
         public Boolean idle = true;
 
-        public Animations(Texture2D texture, Rectangle sourceRect, Vector2 frameSize)
+        public Animations(Texture2D texture, Rectangle sourceRect, Rectangle spriteRect, Vector2 frameSize)
         {
             Texture = texture;
             SourceRect = sourceRect;
+            SpriteRectangle = spriteRect;
             FrameSize = frameSize;
 
             DestionRectangle = new Rectangle(0, 0, (int)FrameSize.X, (int)FrameSize.Y);
@@ -43,15 +45,15 @@ namespace Dungeon2D
 
         public void Animate(SpriteBatch spriteBatch)
         {
-            int total = (int)SourceRect.Width * (int)SourceRect.Height;
-            int frames = ((int)FrameSize.X * (int)FrameSize.Y) / total;
+            int total = (int)SpriteRectangle.Width * (int)SpriteRectangle.Height;
+            int frames = (int)SpriteRectangle.Width / (int)FrameSize.X;
 
             if (!idle)
             {
-                if (FrameTime == 15)
+                if (FrameTime == Settings.FrameTime)
                 {
                     FrameTime = 0;
-                    if (DestionRectangle.X + (int)FrameSize.X == SourceRect.Width)
+                    if (DestionRectangle.X + (int)FrameSize.X == SpriteRectangle.Width)
                         DestionRectangle.X = 0;
                     else
                         DestionRectangle.X += (int)FrameSize.X;
@@ -61,42 +63,6 @@ namespace Dungeon2D
             }
             else
                 DestionRectangle.X = 32;
-
-            if (Keyboard.GetState().GetPressedKeys().Length > 0)
-            {
-                switch (Keyboard.GetState().GetPressedKeys()[0])
-                {
-                    case Keys.W:
-                        {
-                            ChangeState(states.WalkingForward);
-                            SourceRect.Y -= 2;
-                            break;
-                        }
-                    case Keys.A:
-                        {
-                            ChangeState(states.WalkingLeft);
-                            SourceRect.X -= 2;
-                            break;
-                        }
-                    case Keys.S:
-                        {
-                            ChangeState(states.WalkingBackward);
-                            SourceRect.Y += 2;
-                            break;
-                        }
-                    case Keys.D:
-                        {
-                            ChangeState(states.WalkingRight);
-                            SourceRect.X += 2;
-                            break;
-                        }
-                }
-                idle = false;
-            }
-            else
-            {
-                idle = true;
-            }
 
             spriteBatch.Draw(Texture, SourceRect, DestionRectangle, Color.White);
         }
