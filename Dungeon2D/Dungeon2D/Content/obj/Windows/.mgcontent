@@ -4,8 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/piete/Desktop/Dungeon2D/Dungeon2D/Content/Sprites/player.png</File>
-    <File>C:/Users/piete/Desktop/Dungeon2D/Dungeon2D/Content/Textures/grass.jpg</File>
-    <File>C:/Users/piete/Desktop/Dungeon2D/Dungeon2D/Content/Textures/wall.png</File>
+    <File>Y:/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Sprites/player.png</File>
+    <File>Y:/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Textures/grass.jpg</File>
+    <File>Y:/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Textures/wall.png</File>
   </SourceFiles>
 </SourceFileCollection>

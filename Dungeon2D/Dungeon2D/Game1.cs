@@ -103,9 +103,8 @@ namespace Dungeon2D
                             break;
                         }
                 }
-
-                base.Update(gameTime);
             }
+            base.Update(gameTime);
         }
 
         /// <summary>
