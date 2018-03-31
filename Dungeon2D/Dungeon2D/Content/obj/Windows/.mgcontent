@@ -4,6 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>Y:/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Sprites/player.png</File>
+    <File>C:/Users/tommy/Documents/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Sprites/player.png</File>
+    <File>C:/Users/tommy/Documents/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Textures/grass.jpg</File>
+    <File>C:/Users/tommy/Documents/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Textures/wall.png</File>
   </SourceFiles>
 </SourceFileCollection>

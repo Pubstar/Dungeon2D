@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/tommy/Documents/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Sprites/player.png</File>
+    <File>C:/Users/tommy/Documents/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Textures/grass.jpg</File>
+    <File>C:/Users/tommy/Documents/GitHub/Dungeon2D/Dungeon2D/Dungeon2D/Content/Textures/wall.png</File>
+  </SourceFiles>
+</SourceFileCollection>

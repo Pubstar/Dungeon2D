@@ -18,7 +18,7 @@ namespace Dungeon2D
         Rectangle PlayerRect;
         Vector2 FrameSize;
 
-        Vector2 PlayerPos = new Vector2();
+        public Vector2 PlayerPos = new Vector2();
 
         public Player(float playerPosX, float playerPosY)
         {
@@ -30,6 +30,7 @@ namespace Dungeon2D
         {
 
             PlayerRect = new Rectangle((int)PlayerPos.X, (int)PlayerPos.Y, PlayerText.Width, PlayerText.Height);
+            PlayerPos = new Vector2(animations.SourceRect.X, animations.SourceRect.Y);
         }
 
         public void LoadContent(ContentManager content)

@@ -14,7 +14,7 @@ namespace Dungeon2D
 
     public class Animations
     {
-        private Rectangle SourceRect;
+        public Rectangle SourceRect;
         private Rectangle DestionRectangle;
         private Texture2D Texture;
         private Vector2 FrameSize;

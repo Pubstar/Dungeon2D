@@ -12,11 +12,15 @@ namespace Dungeon2D
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player player;
+        WorldHandler wrld;
+        Camera camera;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferWidth = Settings.Width;
+            graphics.PreferredBackBufferHeight = Settings.Height;
         }
 
         /// <summary>
@@ -42,7 +46,10 @@ namespace Dungeon2D
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // Initialize the player
-            player = new Player(70, 70);
+            player = new Player(Settings.Width / 2 - 32, Settings.Height / 2 - 32);
+            wrld = new WorldHandler();
+            wrld.LoadTiles(Content);
+            camera = new Camera();
 
             // TODO: use this.Content to load your game content here
             player.LoadContent(Content);
@@ -70,7 +77,35 @@ namespace Dungeon2D
             // TODO: Add your update logic here
 
             player.Update(gameTime);
-            base.Update(gameTime);
+
+            if (Keyboard.GetState().GetPressedKeys().Length > 0)
+            {
+                switch (Keyboard.GetState().GetPressedKeys()[0])
+                {
+                    case Keys.W:
+                        {
+                            camera.Move(new Vector2(0, Settings.PlayerMoveSpeed));
+                            break;
+                        }
+                    case Keys.A:
+                        {
+                            camera.Move(new Vector2(Settings.PlayerMoveSpeed, 0));
+                            break;
+                        }
+                    case Keys.S:
+                        {
+                            camera.Move(new Vector2(0, -Settings.PlayerMoveSpeed));
+                            break;
+                        }
+                    case Keys.D:
+                        {
+                            camera.Move(new Vector2(-Settings.PlayerMoveSpeed, 0));
+                            break;
+                        }
+                }
+
+                base.Update(gameTime);
+            }
         }
 
         /// <summary>
@@ -79,10 +114,11 @@ namespace Dungeon2D
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            GraphicsDevice.Clear(Color.Black);
+            Matrix viewMatrix = camera.GetMatrix();
+            // * Matrix.CreateScale(screenScale)
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, null, null, null, null, viewMatrix);
+            wrld.Draw(spriteBatch);
             player.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
